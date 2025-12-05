@@ -34,8 +34,8 @@
 
 <style>
 	.hero-bg {
-		background-image: url("$lib/assets/backgrounds/home.png?enhanced");
+		background-image: url("$lib/assets/backgrounds/home.png?enhanced&width=1920&height=1080");
 		background-size: cover;
-		background-position: center;
+		background-position: bottom center;
 	}
 </style>

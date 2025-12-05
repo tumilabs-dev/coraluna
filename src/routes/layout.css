@@ -62,6 +62,15 @@ body {
 	letter-spacing: 0.02em !important;
 }
 
+* {
+	/* Hide scrollbar for all browsers */
+	scrollbar-width: none; /* Firefox */
+	-ms-overflow-style: none; /* IE and Edge */
+}
+*::-webkit-scrollbar {
+	display: none; /* Chrome, Safari, Opera */
+}
+
 @media (prefers-reduced-motion) {
 	::view-transition-group(*),
 	::view-transition-old(*),
@@ -116,4 +125,31 @@ body {
 	animation:
 		210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
 		300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+.page-content {
+	@apply container mx-auto flex h-full w-full justify-end px-3 pt-24 pb-26 md:items-center md:pt-32 md:pb-30;
+}
+.page-container {
+	@apply relative h-screen w-screen px-2;
+}
+
+@media (min-width: 768px) {
+	.page-container {
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+}
+
+@media (max-width: 768px) {
+	.page-container {
+		background-size: cover;
+		background-position: bottom center;
+		background-attachment: fixed;
+	}
+}
+
+ul {
+	line-height: 165%;
 }

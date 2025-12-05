@@ -7,6 +7,7 @@
 	import { onMount, tick } from "svelte";
 	import "./layout.css";
 	import { sleep } from "../utils/sleep.js";
+	import Footer from "$lib/components/layouts/footer.svelte";
 
 	let { data, children } = $props();
 	let mounted = $state(false);
@@ -86,12 +87,12 @@
 	<div
 		class="page"
 		in:pageTransitionAnimation={{
-			duration: 1000,
-			delay: 1500,
+			duration: 500,
+			delay: 1000,
 			onStart: () => handleOverlay("in")
 		}}
 		out:pageTransitionAnimation={{
-			duration: 1000,
+			duration: 500,
 			direction: "out",
 			delay: 0,
 			onStart: () => handleOverlay("out")
@@ -100,8 +101,11 @@
 		<Header />
 
 		<div class="overlay w-full h-full absolute top-0 left-0 z-100"></div>
+		<main class="relative z-10 min-h-screen py-">
+			{@render children()}
+		</main>
 
-		{@render children()}
+		<Footer />
 	</div>
 {/key}
 
