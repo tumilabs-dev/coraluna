@@ -43,8 +43,8 @@
 	$effect(() => {
 		if (isScrollTriggersDisabled) {
 			const timer = setTimeout(() => {
-				ScrollTrigger.getAll().forEach((st) => st.enable());
 				ScrollSmoother.refresh();
+				ScrollTrigger.getAll().forEach((st) => st.enable());
 				isScrollTriggersDisabled = false;
 			}, 1000);
 			return () => clearTimeout(timer);
@@ -57,6 +57,7 @@
 		ScrollTrigger.refresh();
 		ScrollTrigger.getAll().forEach((st) => st.disable());
 		isScrollTriggersDisabled = true;
+
 		instance?.scrollTo(section, true);
 	}
 </script>

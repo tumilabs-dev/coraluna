@@ -27,7 +27,7 @@
 		const scrollSmootherInstance = new ScrollSmoother({
 			wrapper: "#smooth-wrapper",
 			content: "#smooth-content",
-			smooth: 1,
+			smooth: 0.8,
 			smoothTouch: 0.1,
 			ignoreMobileResize: true
 		});
@@ -78,6 +78,7 @@
 				trigger: panel,
 				start: "top+=100px top",
 				end: "bottom-=100px top",
+				anticipatePin: 1,
 
 				onEnter: () => {
 					goToSection(i + 1);

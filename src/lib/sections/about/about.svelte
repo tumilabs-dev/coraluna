@@ -20,7 +20,7 @@
 				living culture of discovery is forming here, shaped by those who seek something brighter.
 				<br />Your journey begins in Coraluna.
 			</p>
-			<Button size="lg">Find The Light</Button>
+			<Button size="lg">Find the light. 🪸🌕</Button>
 		</div>
 	</div>
 </div>
