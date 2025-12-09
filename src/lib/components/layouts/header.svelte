@@ -7,13 +7,12 @@
 	import { onMount } from "svelte";
 
 	import { showMobileMenu } from "$lib/animations/layouts/mobileMenu.animation";
+	import { ScrollSmoother } from "gsap/ScrollSmoother";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	import { gsap } from "gsap";
+	gsap.registerPlugin(ScrollSmoother);
+	gsap.registerPlugin(ScrollTrigger);
 
-	const clickToFooter = async () => {
-		await goto("/cta");
-	};
-	const clickToPharosverse = async () => {
-		await goto("/");
-	};
 	let isOpenMenu = $state<boolean>(false);
 
 	const toggleMenu = () => (isOpenMenu = !isOpenMenu);
@@ -38,6 +37,28 @@
 			});
 		});
 	});
+
+	let isScrollTriggersDisabled = $state<boolean>(false);
+
+	$effect(() => {
+		if (isScrollTriggersDisabled) {
+			const timer = setTimeout(() => {
+				ScrollTrigger.getAll().forEach((st) => st.enable());
+				ScrollSmoother.refresh();
+				isScrollTriggersDisabled = false;
+			}, 1000);
+			return () => clearTimeout(timer);
+		}
+	});
+
+	function goToSection(section: string) {
+		const instance = ScrollSmoother.get();
+		ScrollSmoother.refresh();
+		ScrollTrigger.refresh();
+		ScrollTrigger.getAll().forEach((st) => st.disable());
+		isScrollTriggersDisabled = true;
+		instance?.scrollTo(section, true);
+	}
 </script>
 
 <div
@@ -49,23 +70,27 @@
 	</button>
 
 	<!-- Brands -->
-	<a href="/" class="flex items-center gap-2 grow md:grow-0" aria-label="Coraluna">
+	<button
+		class="flex items-center gap-2 grow md:grow-0"
+		onclick={() => goToSection("#sc-1")}
+		aria-label="Coraluna"
+	>
 		<enhanced:img src={coralunaLogo} alt="Coraluna" class="w-6 h-6 md:block hidden" />
 		<enhanced:img src={logoWhite} alt="Coraluna Logo" class="h-4 w-auto" />
-	</a>
+	</button>
 
 	<!-- Navigation -->
 	<nav class="text-white text-sm font-medium hidden md:block" style="top: {menuPosition}px">
 		<ul class="flex items-center gap-6">
-			<li><a href="/about">The Lore</a></li>
-			<li><a href="/crew">The Crew</a></li>
-			<li><a href="/showcase">Coral Showcase</a></li>
-			<li><a href="/">Pharosverse</a></li>
+			<li><button onclick={() => goToSection("#sc-2")}>The Lore</button></li>
+			<li><button onclick={() => goToSection("#sc-3")}>The Crew</button></li>
+			<li><button onclick={() => goToSection("#sc-4")}>Coral Showcase</button></li>
+			<li><button onclick={() => goToSection("#sc-1")}>Pharosverse</button></li>
 		</ul>
 	</nav>
 
 	<!-- Interact -->
-	<Button size="base" onclick={clickToFooter}>Find The Light</Button>
+	<Button size="base" onclick={() => goToSection("#sc-5")}>Find The Light</Button>
 </div>
 
 {#if isOpenMenu}
@@ -77,11 +102,11 @@
 	>
 		<nav class="text-white text-sm font-medium w-full">
 			<ul class="mobile-menu-list flex items-center justify-center px-6 gap-6 pb-4">
-				<li><a href="/about" class="text-nowrap">The Lore</a></li>
-				<li><a href="/crew" class="text-nowrap">The Crew</a></li>
-				<li><a href="/showcase" class="text-nowrap">Coral Showcase</a></li>
+				<li><button onclick={() => goToSection("#sc-2")}>The Lore</button></li>
+				<li><button onclick={() => goToSection("#sc-3")}>The Crew</button></li>
+				<li><button onclick={() => goToSection("#sc-4")}>Coral Showcase</button></li>
 			</ul>
-			<Button size="base" className="w-full rounded-none" onclick={clickToPharosverse}
+			<Button size="base" className="w-full rounded-none" onclick={() => goToSection("#sc-1")}
 				>Pharosverse</Button
 			>
 		</nav>

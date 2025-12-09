@@ -4,13 +4,13 @@
 	);
 </script>
 
-<div class="showcase-bg page-container">
-	<div class="page-content relative">
+<div class="showcase page-container relative overflow-hidden">
+	<div class="relative w-screen h-full">
 		<div
-			class="grid md:grid-cols-3 container gap-4 absolute top-0 left-1/2 -translate-x-1/2 h-screen overflow-y-scroll px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
+			class="showcase-wrapper flex flex-nowrap gap-4 px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
 		>
 			{#each images as image}
-				<div class="showcase-container relative rounded-2xl">
+				<div class="showcase-container relative rounded-2xl w-[75svw] h-[75svh] aspect-square">
 					<div
 						class="showcase-container-overlay absolute inset-0 rounded-2xl border-4 md:border-8 border-primary-lightest/80"
 					></div>
@@ -26,7 +26,7 @@
 </div>
 
 <style>
-	.showcase-bg {
+	.showcase {
 		background-image: url("$lib/assets/backgrounds/showcase.png?enhanced");
 		background-size: cover;
 		background-position: center;

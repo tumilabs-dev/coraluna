@@ -3,9 +3,17 @@
 
 	// You can use the `browser` store from Svelte's `@sveltejs/kit`/runes to check for the `window` object or run code only in the browser:
 	import { browser } from "$app/environment";
-	import { tailwind } from "tw-merge";
+	import { onMount, tick } from "svelte";
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	import { gsap } from "gsap";
+	gsap.registerPlugin(ScrollTrigger);
 
 	const isMobile = browser ? window.innerWidth < 768 : false;
+
+	onMount(async () => {
+		await tick();
+		ScrollTrigger.refresh();
+	});
 </script>
 
 <div class="cta-bg page-container">

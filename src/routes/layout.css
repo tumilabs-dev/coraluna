@@ -159,5 +159,9 @@ ul {
 }
 
 section {
-	@apply sticky top-0 h-screen w-screen;
+	@apply relative h-screen;
+}
+
+button {
+	cursor: pointer;
 }
