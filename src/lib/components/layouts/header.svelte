@@ -70,7 +70,7 @@
 
 {#if isOpenMenu}
 	<div
-		class="mobile-menu-container container mx-auto w-fit flex items-center justify-between fixed left-1/2 -translate-x-1/2 z-50 bg-white/10 border border-white/20 pt-4 rounded-4xl overflow-hidden"
+		class="mobile-menu-container container mx-auto w-fit flex items-center justify-between fixed left-1/2 -translate-x-1/2 z-50 bg-white/3 border border-white/20 pt-4 rounded-4xl overflow-hidden"
 		style="top: {menuPosition}px"
 		in:showMobileMenu
 		out:showMobileMenu
@@ -104,7 +104,7 @@
 <style>
 	.header-container,
 	.mobile-menu-container {
-		backdrop-filter: blur(40px);
+		backdrop-filter: blur(20px);
 		box-shadow: inset 4px 4px 20px 0
 			color-mix(in srgb, var(--color-primary-lightest) 30%, transparent);
 	}

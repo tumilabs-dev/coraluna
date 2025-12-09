@@ -1,9 +1,10 @@
 <script>
+	import Button from "$lib/components/ui/button.svelte";
 </script>
 
 <div class="about-bg page-container">
 	<div class="page-content h-screen">
-		<div class="w-full md:w-1/2">
+		<div class="w-full md:w-1/2" data-speed="0.8">
 			<enhanced:img
 				src="$lib/assets/logos/logo-white.png?enhanced"
 				alt="About"
@@ -13,12 +14,13 @@
 			<p class="text-white/70 md:text-2xl font-medium mb-4 md:mb-6">
 				Where every journey finds its first light
 			</p>
-			<p class="text-sm md:text-base text-white font-normal">
+			<p class="text-sm md:text-base text-white font-normal mb-6">
 				Coraluna is the hidden harbor beneath the tides, where every Sailor first arrives to find
 				their compass, tools and the community that will accompany them into the world of PHAROS. A
 				living culture of discovery is forming here, shaped by those who seek something brighter.
-				<br />Your journey begins in Coraluna.<br /> Find the light. 🪸🌕
+				<br />Your journey begins in Coraluna.
 			</p>
+			<Button size="lg">Find The Light</Button>
 		</div>
 	</div>
 </div>

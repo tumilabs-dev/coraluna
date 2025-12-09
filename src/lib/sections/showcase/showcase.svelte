@@ -7,7 +7,7 @@
 <div class="showcase-bg page-container">
 	<div class="page-content relative">
 		<div
-			class="grid md:grid-cols-3 container gap-4 fixed top-0 left-1/2 -translate-x-1/2 h-screen overflow-y-scroll px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
+			class="grid md:grid-cols-3 container gap-4 absolute top-0 left-1/2 -translate-x-1/2 h-screen overflow-y-scroll px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
 		>
 			{#each images as image}
 				<div class="showcase-container relative rounded-2xl">

@@ -3,8 +3,7 @@
 </script>
 
 <div class="crew-bg page-container">
-	<div class="page-content justify-start!">
-		<div class="page-overlay fixed inset-0 bg-primary-light/20"></div>
+	<div class="page-content justify-start! relative">
 		<div class="w-full md:w-1/2 md:px-[6%] z-10">
 			<h1 class="text-[32px] md:text-[48px] font-bold text-white mb-4 md:mb-8 md:text-center pl-3">
 				The Crew
@@ -46,6 +45,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="absolute inset-0 page-overlay"></div>
 </div>
 
 <style>

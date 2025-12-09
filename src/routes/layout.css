@@ -62,6 +62,12 @@ body {
 	letter-spacing: 0.02em !important;
 }
 
+html,
+body {
+	overscroll-behavior: none;
+	min-height: 100vh;
+}
+
 * {
 	/* Hide scrollbar for all browsers */
 	scrollbar-width: none; /* Firefox */
@@ -116,22 +122,20 @@ body {
 }
 
 :root::view-transition-old(root) {
-	animation:
-		90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-		300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+	animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+	/* 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left; */
 }
 
 :root::view-transition-new(root) {
-	animation:
-		210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-		300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+	animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
+	/* 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right; */
 }
 
 .page-content {
 	@apply container mx-auto flex h-full w-full justify-end px-3 pt-24 pb-26 md:items-center md:pt-32 md:pb-30;
 }
 .page-container {
-	@apply relative h-screen w-screen px-2;
+	@apply h-full w-full;
 }
 
 @media (min-width: 768px) {
@@ -152,4 +156,8 @@ body {
 
 ul {
 	line-height: 165%;
+}
+
+section {
+	@apply sticky top-0 h-screen w-screen;
 }
