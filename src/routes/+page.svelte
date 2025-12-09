@@ -12,15 +12,6 @@
 	gsap.registerPlugin(ScrollTrigger);
 	gsap.registerPlugin(ScrollSmoother);
 
-	ScrollTrigger.defaults({
-		markers: {
-			startColor: "purple",
-			endColor: "red",
-			fontSize: "22px",
-			indent: 10
-		}
-	});
-
 	onMount(async () => {
 		await tick();
 		const sections = gsap.utils.toArray("section") as HTMLElement[];
@@ -65,7 +56,7 @@
 					start: "top top",
 					end: `+=${finalScrollDistance}`,
 					scrub: 1,
-					markers: true,
+
 					invalidateOnRefresh: true,
 					anticipatePin: 1
 				}
