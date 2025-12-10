@@ -1,9 +1,25 @@
 <script>
+	import bgImageMobile from "$lib/assets/backgrounds/about-mobile.png?enhanced";
+	import bgImage from "$lib/assets/backgrounds/about.png?enhanced";
 	import Button from "$lib/components/ui/button.svelte";
+
+	// const backgroundImage = $derived(isMobile ? bgImageMobile : bgImage);
 </script>
 
 <div class="about-bg page-container">
-	<div class="page-content h-screen">
+	<enhanced:img
+		src={bgImage}
+		alt="About"
+		class="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block"
+	/>
+
+	<enhanced:img
+		src={bgImageMobile}
+		alt="About"
+		class="absolute inset-0 w-full h-full object-cover -z-10 md:hidden"
+	/>
+
+	<div class="page-content z-20">
 		<div class="w-full md:w-1/2" data-speed="0.8">
 			<enhanced:img
 				src="$lib/assets/logos/logo-white.png?enhanced"
@@ -26,14 +42,4 @@
 </div>
 
 <style>
-	@media (min-width: 768px) {
-		.about-bg {
-			background-image: url("$lib/assets/backgrounds/about.png?enhanced");
-		}
-	}
-	@media (max-width: 768px) {
-		.about-bg {
-			background-image: url("$lib/assets/backgrounds/about-mobile.png?enhanced");
-		}
-	}
 </style>

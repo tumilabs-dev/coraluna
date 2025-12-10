@@ -1,10 +1,13 @@
 <script lang="ts">
+	import bgImage from "$lib/assets/backgrounds/showcase.png?enhanced";
+
 	const images = Object.values(
 		import.meta.glob("$lib/assets/showcases/*.png", { eager: true, import: "default" })
 	);
 </script>
 
 <div class="showcase page-container relative overflow-hidden">
+	<enhanced:img src={bgImage} alt="Showcase" class="absolute inset-0 w-full h-full object-cover" />
 	<div class="relative w-screen h-full">
 		<div
 			class="showcase-wrapper flex flex-nowrap gap-4 px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
@@ -26,12 +29,6 @@
 </div>
 
 <style>
-	.showcase {
-		background-image: url("$lib/assets/backgrounds/showcase.png?enhanced");
-		background-size: cover;
-		background-position: center;
-	}
-
 	.showcase-container-overlay {
 		box-shadow:
 			inset -4px -4px 30px 0 color-mix(in srgb, var(--color-primary-lightest) 30%, transparent),

@@ -2,6 +2,9 @@
 	import crewAvz from "$lib/assets/crew/avz.png?enhanced";
 	import crewOkiwa from "$lib/assets/crew/okiwa.png?enhanced";
 
+	import bgImage from "$lib/assets/backgrounds/crew.png?enhanced";
+	import bgImageMobile from "$lib/assets/backgrounds/crew-mobile.png?enhanced";
+
 	const crewMembers = [
 		{
 			name: "AVZ",
@@ -28,7 +31,17 @@
 	}
 </script>
 
-<div class="crew-bg page-container">
+<div class="relative page-container">
+	<enhanced:img
+		src={bgImage}
+		alt="Crew"
+		class="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block"
+	/>
+	<enhanced:img
+		src={bgImageMobile}
+		alt="Crew"
+		class="absolute inset-0 w-full h-full object-cover -z-10 md:hidden"
+	/>
 	<div class="page-content justify-start! relative">
 		<div class="w-full md:w-1/2 md:px-[6%] z-10">
 			<h1 class="text-[32px] md:text-[48px] font-bold text-white mb-4 md:mb-8 md:text-center pl-3">
@@ -39,7 +52,7 @@
 				<div class="relative">
 					<!-- Carousel Container -->
 					<div
-						class="relative overflow-hidden rounded-[25px] md:rounded-[33px] w-[100%] aspect-square"
+						class="relative overflow-hidden rounded-[25px] md:rounded-[33px] w-full aspect-square"
 					>
 						{#each crewMembers as member, index}
 							<div
@@ -155,26 +168,14 @@
 <style>
 	/* PC */
 	@media (min-width: 768px) {
-		.crew-bg {
-			background-image: url("$lib/assets/backgrounds/crew.png?enhanced");
-			background-size: cover;
-			background-position: center;
-		}
-
 		.page-overlay {
 			background-image: linear-gradient(to right, #08b8dd00 0%, #08274f 0%, transparent 60%);
 		}
 	}
 	/* Mobile */
 	@media (max-width: 768px) {
-		.crew-bg {
-			background-image: url("$lib/assets/backgrounds/crew-mobile.png?enhanced");
-			background-size: cover;
-			background-position: center;
-
-			.page-overlay {
-				background-image: linear-gradient(to bottom, #08b8dd00 0%, #08274f 0%, transparent 30%);
-			}
+		.page-overlay {
+			background-image: linear-gradient(to bottom, #08b8dd00 0%, #08274f 0%, transparent 30%);
 		}
 	}
 

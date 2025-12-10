@@ -1,11 +1,16 @@
 <script>
+	import bgImage from "$lib/assets/backgrounds/home.png?enhanced";
 	import bannerLogoWhite from "$lib/assets/logos/banner-logo-white.png?enhanced";
 	import Button from "$lib/components/ui/button.svelte";
 	import { animate } from "$lib/utils/animateBase.svelte";
-	import { gsap } from "gsap";
 </script>
 
 <div class="hero-bg relative h-screen w-screen page-container">
+	<enhanced:img
+		src={bgImage}
+		alt="Home"
+		class="absolute inset-0 w-full h-full object-cover -z-10"
+	/>
 	<div
 		class="banner-container container mx-auto h-full w-full flex flex-col items-center justify-center"
 	>
@@ -35,9 +40,4 @@
 </div>
 
 <style>
-	.hero-bg {
-		background-image: url("$lib/assets/backgrounds/home.png?enhanced&width=1920&height=1080");
-		background-size: cover;
-		background-position: bottom center;
-	}
 </style>

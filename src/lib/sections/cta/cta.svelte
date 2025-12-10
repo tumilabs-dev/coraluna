@@ -1,22 +1,16 @@
 <script>
 	import Button from "$lib/components/ui/button.svelte";
+	import bgImage from "$lib/assets/backgrounds/cta.png?enhanced";
 
 	// You can use the `browser` store from Svelte's `@sveltejs/kit`/runes to check for the `window` object or run code only in the browser:
 	import { browser } from "$app/environment";
-	import { onMount, tick } from "svelte";
-	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	import { gsap } from "gsap";
-	gsap.registerPlugin(ScrollTrigger);
 
 	const isMobile = browser ? window.innerWidth < 768 : false;
-
-	onMount(async () => {
-		await tick();
-		ScrollTrigger.refresh();
-	});
 </script>
 
-<div class="cta-bg page-container">
+<div class="relative page-container">
+	<enhanced:img src={bgImage} alt="CTA" class="absolute inset-0 w-full h-full object-cover -z-10" />
+
 	<div class="page-content">
 		<div class="w-full text-center flex flex-col items-center justify-around h-screen">
 			<div>
@@ -47,12 +41,6 @@
 </div>
 
 <style>
-	.cta-bg {
-		background-image: url("$lib/assets/backgrounds/cta.png?enhanced");
-		background-size: cover;
-		background-position: center;
-	}
-
 	.bubble-button {
 		box-shadow:
 			inset -4px -4px 20px 0 color-mix(in srgb, var(--color-primary-light) 50%, transparent),
