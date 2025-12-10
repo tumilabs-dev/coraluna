@@ -9,7 +9,12 @@
 </script>
 
 <div class="relative page-container">
-	<enhanced:img src={bgImage} alt="CTA" class="absolute inset-0 w-full h-full object-cover -z-10" />
+	<enhanced:img
+		src={bgImage}
+		alt="CTA"
+		sizes="min(1440px, 100vw)"
+		class="absolute inset-0 w-full h-full object-cover -z-10"
+	/>
 
 	<div class="page-content">
 		<div class="w-full text-center flex flex-col items-center justify-around h-screen">
@@ -18,17 +23,28 @@
 					Keep Exploring<br /> The Light
 				</h1>
 
-				<Button size={isMobile ? "base" : "xl"}>Follow The Light</Button>
+				<Button
+					size={isMobile ? "base" : "xl"}
+					onclick={() => window.open("https://pharosverse.xyz", "_blank")}>Follow The Light</Button
+				>
 			</div>
 
 			<div class="flex items-center justify-center gap-2">
 				<span class="text-lg md:text-2xl text-white font-semibold">Beneath the tides</span>
 
-				<button aria-label="X" class="bubble-button cursor-pointer size-14 md:size-18 ml-2">
+				<button
+					aria-label="X"
+					class="bubble-button cursor-pointer size-14 md:size-18 ml-2"
+					onclick={() => window.open("https://x.com/0xCoraluna", "_blank")}
+				>
 					<enhanced:img src="$lib/assets/icons/x.svg" alt="X" class="md:size-8 size-6" />
 				</button>
 
-				<button aria-label="Discord" class="bubble-button cursor-pointer size-14 md:size-18">
+				<button
+					aria-label="Discord"
+					class="bubble-button cursor-pointer size-14 md:size-18"
+					onclick={() => window.open("https://discord.com/invite/CWAXDrSr48", "_blank")}
+				>
 					<enhanced:img
 						src="$lib/assets/icons/discord.svg"
 						alt="Discord"
