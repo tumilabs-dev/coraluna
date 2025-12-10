@@ -8,12 +8,14 @@
 	<enhanced:img
 		src={bgImage}
 		alt="About"
+		sizes="min(1440px, 100vw)"
 		class="absolute inset-0 w-full h-full object-cover -z-10 hidden md:block"
 	/>
 
 	<enhanced:img
 		src={bgImageMobile}
 		alt="About"
+		sizes="min(1440px, 100vw)"
 		class="absolute inset-0 w-full h-full object-cover -z-10 md:hidden"
 	/>
 

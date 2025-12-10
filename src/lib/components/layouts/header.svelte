@@ -150,7 +150,7 @@
 <style>
 	.header-container,
 	.mobile-menu-container {
-		backdrop-filter: blur(20px);
+		backdrop-filter: blur(10px);
 		box-shadow: inset 4px 4px 20px 0
 			color-mix(in srgb, var(--color-primary-lightest) 30%, transparent);
 	}

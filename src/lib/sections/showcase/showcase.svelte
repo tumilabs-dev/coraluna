@@ -14,16 +14,15 @@
 	const imageUrls = Object.values(images).map((module: any) => module.default);
 </script>
 
-<!-- TODO: Optimize for mobile -->
-<div class="showcase page-container relative overflow-hidden">
+<div class="showcase page-container relative">
 	<enhanced:img src={bgImage} alt="Showcase" class="absolute inset-0 w-full h-full object-cover" />
-	<div class="relative w-screen h-full">
+	<div class="relative w-screen h-screen overflow-y-auto md:overflow-x-auto md:overflow-y-visible">
 		<div
-			class="showcase-wrapper flex flex-nowrap gap-4 px-3 md:px-20 pt-24 pb-26 md:items-center md:pt-32 md:pb-30 bg-transparent"
+			class="showcase-wrapper h-full grid grid-cols-2 gap-4 px-3 md:px-20 pt-24 pb-26 md:flex md:flex-nowrap md:items-center md:pt-32 md:pb-30 bg-transparent md:min-w-max"
 		>
 			{#each imageUrls as image}
 				<div
-					class="showcase-container relative rounded-2xl w-[30svw] h-[30svh] md:w-[75svw] md:h-[75svh] aspect-square!"
+					class="showcase-container relative rounded-2xl w-full aspect-square md:w-[40svw] md:aspect-square! md:shrink-0"
 				>
 					<div
 						class="showcase-container-overlay absolute inset-0 rounded-2xl border-4 md:border-8 border-primary-lightest/80"

@@ -32,7 +32,7 @@
 		const showcase = document.querySelector(".showcase") as HTMLElement; // Get the main container
 		const showcaseWrapper = document.querySelector(".showcase-wrapper") as HTMLElement; // Get the flex container
 
-		if (showcase && showcaseWrapper && showcaseSection) {
+		if (showcase && showcaseWrapper && showcaseSection && window.innerWidth > 768) {
 			// Calculate the scroll distance: total width of wrapper minus viewport width
 			// Use window width for more accurate calculation with ScrollSmoother
 			const viewportWidth = window.innerWidth;
