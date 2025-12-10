@@ -35,7 +35,7 @@
 <div
 	class="footer-container container mx-auto gap-4 flex md:flex-row flex-col items-center md:items-center justify-between fixed bottom-2 md:bottom-10 left-1/2 -translate-x-1/2 z-50 bg-white/10 border border-white/20 py-3 md:py-4 px-6 rounded-full text-white transition-all duration-300 {!isCollapsed
 		? 'w-[calc(100svw-16px)]'
-		: 'w-[min(calc(50svw-16px),100%)]'}"
+		: 'w-[calc(100svw-24px)] md:w-[calc(100svw-16px)]'}"
 >
 	<span class="text-sm font-medium">Find the light 🪸🌕 </span>
 	<div class="flex items-center gap-2 grow md:w-auto w-full">
