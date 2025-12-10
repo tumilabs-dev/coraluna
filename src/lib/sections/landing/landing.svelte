@@ -3,6 +3,23 @@
 	import bannerLogoWhite from "$lib/assets/logos/banner-logo-white.png?enhanced";
 	import Button from "$lib/components/ui/button.svelte";
 	import { animate } from "$lib/utils/animateBase.svelte";
+	import { gsap } from "gsap";
+
+	// Animation for the banner logo
+	$effect(() => {
+		gsap.to(".banner-container>*", {
+			y: 100,
+			duration: 1,
+			stagger: 0.2,
+			scrollTrigger: {
+				trigger: ".hero-bg",
+				start: "top top",
+				end: "bottom top",
+				scrub: 1,
+				markers: true
+			}
+		});
+	});
 </script>
 
 <div class="hero-bg relative h-screen w-screen page-container">
@@ -15,7 +32,6 @@
 		class="banner-container container mx-auto h-full w-full flex flex-col items-center justify-center"
 	>
 		<enhanced:img
-			data-speed="0.8"
 			src={bannerLogoWhite}
 			alt="Coraluna"
 			class="hero-banner w-full object-contain"

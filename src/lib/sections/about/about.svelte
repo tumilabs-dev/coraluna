@@ -2,8 +2,6 @@
 	import bgImageMobile from "$lib/assets/backgrounds/about-mobile.png?enhanced";
 	import bgImage from "$lib/assets/backgrounds/about.png?enhanced";
 	import Button from "$lib/components/ui/button.svelte";
-
-	// const backgroundImage = $derived(isMobile ? bgImageMobile : bgImage);
 </script>
 
 <div class="about-bg page-container">
