@@ -33,6 +33,7 @@
 		<enhanced:img
 			src={bannerLogoWhite}
 			alt="Coraluna"
+			sizes="min(1440px, 100vw)"
 			class="hero-banner w-full object-contain"
 			use:animate={{
 				type: "set",
