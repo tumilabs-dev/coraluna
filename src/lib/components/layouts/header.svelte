@@ -101,7 +101,10 @@
 			<li><button onclick={() => goToSection("#sc-2")}>The Lore</button></li>
 			<li><button onclick={() => goToSection("#sc-3")}>The Crew</button></li>
 			<li><button onclick={() => goToSection("#sc-4")}>Coral Showcase</button></li>
-			<li><button onclick={() => goToSection("#sc-1")}>Pharosverse</button></li>
+			<li>
+				<button onclick={() => window.open("https://pharosverse.com", "_blank")}>Pharosverse</button
+				>
+			</li>
 		</ul>
 	</nav>
 
@@ -122,8 +125,10 @@
 				<li><button onclick={() => goToSection("#sc-3")}>The Crew</button></li>
 				<li><button onclick={() => goToSection("#sc-4")}>Coral Showcase</button></li>
 			</ul>
-			<Button size="base" className="w-full rounded-none" onclick={() => goToSection("#sc-1")}
-				>Pharosverse</Button
+			<Button
+				size="base"
+				className="w-full rounded-none"
+				onclick={() => window.open("https://pharosverse.xyz/", "_blank")}>Pharosverse</Button
 			>
 		</nav>
 	</div>
