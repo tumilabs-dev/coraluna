@@ -15,8 +15,7 @@
 				trigger: ".hero-bg",
 				start: "top top",
 				end: "bottom top",
-				scrub: 1,
-				markers: true
+				scrub: 1
 			}
 		});
 	});
