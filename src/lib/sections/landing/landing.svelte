@@ -51,7 +51,12 @@
 			}}
 		/>
 
-		<Button size="xl" data-speed="0.8" data-lag="0.2">Enter Pharosverse</Button>
+		<Button
+			size="xl"
+			data-speed="0.8"
+			data-lag="0.2"
+			onclick={() => window.open("https://pharosverse.xyz", "_blank")}>Enter Pharosverse</Button
+		>
 	</div>
 </div>
 

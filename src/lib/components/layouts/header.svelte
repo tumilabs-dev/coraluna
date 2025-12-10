@@ -102,7 +102,7 @@
 			<li><button onclick={() => goToSection("#sc-3")}>The Crew</button></li>
 			<li><button onclick={() => goToSection("#sc-4")}>Coral Showcase</button></li>
 			<li>
-				<button onclick={() => window.open("https://pharosverse.com", "_blank")}>Pharosverse</button
+				<button onclick={() => window.open("https://pharosverse.xyz", "_blank")}>Pharosverse</button
 				>
 			</li>
 		</ul>
