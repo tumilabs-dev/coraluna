@@ -23,10 +23,6 @@
 			ignoreMobileResize: true
 		});
 
-		function goToSection(i: number) {
-			scrollSmootherInstance.scrollTo(sections[i], true, "top top");
-		}
-
 		// Wait for ScrollSmoother to initialize and elements to be measured
 		await tick();
 		// Additional wait to ensure DOM is fully ready
@@ -62,20 +58,16 @@
 				}
 			});
 		}
-
 		sections.forEach((panel, i) => {
 			ScrollTrigger.create({
-				id: `section${i}`,
 				trigger: panel,
-				start: "top+=100px top",
-				end: "bottom-=100px top",
-				anticipatePin: 1,
-
-				onEnter: () => {
-					goToSection(i + 1);
-				},
-				onEnterBack: () => {
-					goToSection(i);
+				start: "top center",
+				end: "bottom center",
+				snap: {
+					snapTo: 1 / (sections.length - 1),
+					duration: { min: 0.3, max: 0.6 },
+					delay: 0,
+					ease: "power2.inOut"
 				}
 			});
 		});

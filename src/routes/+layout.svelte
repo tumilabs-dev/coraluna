@@ -51,7 +51,6 @@
 
 <style>
 	:global(html) {
-		/* scroll-behavior: smooth; */
 		background-color: var(--color-primary);
 	}
 

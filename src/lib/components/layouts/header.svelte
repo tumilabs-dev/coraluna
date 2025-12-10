@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { goto, onNavigate } from "$app/navigation";
+	import { onNavigate } from "$app/navigation";
 	import menuIcon from "$lib/assets/icons/menu.svg?enhanced";
 	import coralunaLogo from "$lib/assets/logos/coraluna.png?enhanced";
 	import logoWhite from "$lib/assets/logos/logo-white.png";
@@ -7,9 +7,9 @@
 	import { onMount } from "svelte";
 
 	import { showMobileMenu } from "$lib/animations/layouts/mobileMenu.animation";
+	import { gsap } from "gsap";
 	import { ScrollSmoother } from "gsap/ScrollSmoother";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	import { gsap } from "gsap";
 	gsap.registerPlugin(ScrollSmoother);
 	gsap.registerPlugin(ScrollTrigger);
 
@@ -51,14 +51,29 @@
 		}
 	});
 
-	function goToSection(section: string) {
-		const instance = ScrollSmoother.get();
+	function goToSection(id: string) {
 		ScrollSmoother.refresh();
-		ScrollTrigger.refresh();
-		ScrollTrigger.getAll().forEach((st) => st.disable());
-		isScrollTriggersDisabled = true;
+		const scrollSmootherInstance = ScrollSmoother.get();
+		const target = document.querySelector(id);
 
-		instance?.scrollTo(section, true);
+		if (!target) return;
+
+		if (id === "sc-4") {
+			// Cuộn đến điểm bắt đầu của Pin (start: "top top")
+			scrollSmootherInstance?.scrollTo(target, true, "power2");
+		} else if (id === "sc-5" && document.getElementById("sc-4")?.nextElementSibling === target) {
+			// Nếu cuộn từ showcase (sc-4) sang CTA (sc-5),
+			// cần cuộn đến điểm kết thúc của Pin (end: `+=${finalScrollDistance}`)
+			const showcaseTrigger = ScrollTrigger.getById("showcase-tween");
+			if (showcaseTrigger) {
+				// Cuộn đến vị trí kết thúc của trigger pinning (để thoát khỏi animation ngang)
+				scrollSmootherInstance?.scrollTo(showcaseTrigger.end, true, "power2");
+				return;
+			}
+		}
+
+		// Trường hợp cuộn bình thường
+		scrollSmootherInstance?.scrollTo(target, true, "power2");
 	}
 </script>
 
