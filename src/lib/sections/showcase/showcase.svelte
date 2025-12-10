@@ -14,6 +14,7 @@
 	const imageUrls = Object.values(images).map((module: any) => module.default);
 </script>
 
+<!-- TODO: Optimize for mobile -->
 <div class="showcase page-container relative overflow-hidden">
 	<enhanced:img src={bgImage} alt="Showcase" class="absolute inset-0 w-full h-full object-cover" />
 	<div class="relative w-screen h-full">
