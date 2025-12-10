@@ -59,10 +59,16 @@
 			});
 		}
 		sections.forEach((panel, i) => {
+			if (panel.id === "sc-4") {
+				return;
+			}
+			const start = "top top";
+			const end = "bottom top+=120vh";
 			ScrollTrigger.create({
 				trigger: panel,
-				start: "top center",
-				end: "bottom center",
+				start,
+				end,
+				pin: true,
 				snap: {
 					snapTo: 1 / (sections.length - 1),
 					duration: { min: 0.3, max: 0.6 },
