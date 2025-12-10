@@ -52,16 +52,16 @@
 				<div class="relative">
 					<!-- Carousel Container -->
 					<div
-						class="relative overflow-hidden rounded-[25px] md:rounded-[33px] w-full aspect-square"
+						class="relative mx-auto overflow-hidden rounded-[25px] md:rounded-[33px] w-full max-w-[450px] max-h-[450px] aspect-square"
 					>
 						{#each crewMembers as member, index}
 							<div
-								class="absolute inset-0 rounded-[25px] md:rounded-[33px] overflow-hidden transition-opacity duration-300 ease-in-out {currentIndex ===
+								class="absolute flex items-center justify-center inset-0 rounded-[25px] md:rounded-[33px] overflow-hidden transition-opacity duration-300 ease-in-out {currentIndex ===
 								index
 									? 'opacity-100 z-10'
 									: 'opacity-0 z-0 pointer-events-none'}"
 							>
-								<div class="flex items-center justify-center">
+								<div class="w-full flex items-center justify-center">
 									<enhanced:img
 										src={member.image}
 										alt={member.name}

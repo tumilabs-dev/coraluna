@@ -131,7 +131,7 @@ body {
 }
 
 .page-content {
-	@apply container mx-auto flex h-full w-full justify-end px-3 pt-24 pb-26 md:items-center md:pt-32 md:pb-30;
+	@apply container mx-auto flex h-full w-full justify-end px-3 py-10 pt-24 pb-26 md:items-center md:py-0 md:pt-32 md:pb-30;
 }
 .page-container {
 	@apply h-full w-full;
